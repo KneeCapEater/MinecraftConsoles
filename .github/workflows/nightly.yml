@@ -19,9 +19,6 @@ jobs:
       uses: microsoft/setup-msbuild@v2
     - name: Build
       run: MSBuild.exe MinecraftConsoles.sln /p:Configuration=Release /p:Platform="Windows64"
-    - name: Copy assets to release
-      run: |
-        xcopy /E /I /Y Minecraft.Client\Assets x64\Release\Assets
     - name: Zip Build
       run: 7z a -r LCEWindows64.zip ./x64/Release/*
     - name: Update release
