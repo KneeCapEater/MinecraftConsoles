@@ -1,5 +1,4 @@
 name: Nightly Release
-
 on:
   workflow_dispatch: 
   push:
@@ -9,25 +8,22 @@ on:
       - '.gitignore'
       - '*.md'
       - '.github/*.md'
-
 jobs:
   build:
     name: Build Windows64
     runs-on: windows-latest
-
     steps:
     - name: Checkout
-      uses: actions/checkout@v6
-
+      uses: actions/checkout@v4
     - name: Setup msbuild
       uses: microsoft/setup-msbuild@v2
-
     - name: Build
       run: MSBuild.exe MinecraftConsoles.sln /p:Configuration=Release /p:Platform="Windows64"
-
+    - name: Copy assets to release
+      run: |
+        xcopy /E /I /Y Minecraft.Client\Assets x64\Release\Assets
     - name: Zip Build
       run: 7z a -r LCEWindows64.zip ./x64/Release/*
-
     - name: Update release
       uses: andelf/nightly-release@main
       env:
