@@ -1,3 +1,9 @@
+## DISCLAIMER
+I am just editing this project to essentially mod the game in custom ways.
+Credits to the original project owners for the decompile (SmartCMD MinecraftConsoles)
+CURSEFORGE MODS WILL NOT HAVE SUPPORT AT ALL.
+
+
 # MinecraftConsoles
 
 [![Discord](https://img.shields.io/badge/Discord-Join%20Server-5865F2?logo=discord&logoColor=white)](https://discord.gg/jrum7HhegA)
